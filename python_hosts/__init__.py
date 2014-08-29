@@ -1,7 +1,12 @@
+import io
 
 
 def parse_file(path):
-    with open(path) as f:
+    handler = path
+    if isinstance(handler, (str, unicode)):
+        handler = open(handler)
+
+    with handler as f:
         line_source = True
 
         result = list()
@@ -25,6 +30,11 @@ def parse_file(path):
                 result.append((line[0], set(line[1:])))
 
         return result
+
+
+def parse_string(data):
+    s = io.BytesIO(data)
+    return parse_file(s)
 
 
 def build_file(config):
