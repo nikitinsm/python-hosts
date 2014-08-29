@@ -17,7 +17,7 @@ class BaseTest(unittest.TestCase):
             ] )
 
     def test_parser_string_1(self):
-        v = b"""127.0.0.1 localhost"""
+        v = """127.0.0.1 localhost"""
         self.assertListEqual(parse_string(v), [('127.0.0.1', {'localhost', })])
 
     def test_build_1(self):
