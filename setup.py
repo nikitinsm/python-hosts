@@ -3,7 +3,7 @@ from distutils.core import setup
 
 
 setup\
-    ( name='Python-hosts-util'
+    ( name='Python-hosts'
     , version='1.0'
     , description='Python /etc/hosts utility'
     , author='Sergey Nikitin'
